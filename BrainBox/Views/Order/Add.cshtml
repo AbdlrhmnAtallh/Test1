@@ -1,0 +1,30 @@
+﻿@model Order
+
+@{
+    SelectList items = new SelectList(ViewBag.Toys, "Id", "Name");
+
+}
+
+<form asp-controller="Order" asp-action="Add">
+
+    <div asp-validation-summary="All"></div>
+
+    <label asp-for="Id" class="form-label"></label>
+    <input asp-for="Id" class="form-control" />
+    <span asp-validation-for="Id" style="color:red"></span>
+
+    <label asp-for="OrderNo" class="form-label"></label>
+    <input asp-for="OrderNo" class="form-control" />
+    <span asp-validation-for="OrderNo" style="color:red"></span>
+
+    <label asp-for="TotalPrice" class="form-label"></label>
+    <input asp-for="TotalPrice" class="form-control" />
+    <span asp-validation-for="TotalPrice" style="color:red"></span>
+
+    
+    <label asp-for="ToysIds" class="form-label"></label>
+    <select asp-items="items" asp-for="ToysIds" class="form-control" />
+    <span asp-validation-for="ToysIds" style="color:red"></span>
+
+    <button type="submit">Add</button>
+</form>
