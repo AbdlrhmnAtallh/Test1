@@ -1,3 +1,5 @@
+using BrainBox.Services;
+
 namespace BrainBox
 {
     public class Program
@@ -8,6 +10,8 @@ namespace BrainBox
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddSingleton<IToyLayer, ToyLayer>();
+            builder.Services.AddSingleton<IOrderLayer, OrderLayer>();
 
             var app = builder.Build();
 

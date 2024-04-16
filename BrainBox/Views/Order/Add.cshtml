@@ -4,10 +4,14 @@
     SelectList items = new SelectList(ViewBag.Toys, "Id", "Name");
 
 }
+<head>
+    <title>Add order</title>
+    <link rel="stylesheet" href="~/css/AddForm.css">
+</head>
 
 <form asp-controller="Order" asp-action="Add">
 
-    <div asp-validation-summary="All"></div>
+    <div asp-validation-summary="All" style="color:red"></div>
 
     <label asp-for="Id" class="form-label"></label>
     <input asp-for="Id" class="form-control" />
@@ -23,8 +27,14 @@
 
     
     <label asp-for="ToysIds" class="form-label"></label>
-    <select asp-items="items" asp-for="ToysIds" class="form-control" />
+    <select asp-items="items" asp-for="ToysIds" class="form-control"></select>
     <span asp-validation-for="ToysIds" style="color:red"></span>
 
     <button type="submit">Add</button>
 </form>
+
+<a asp-controller="Order" asp-action="All" class="btn btn-primary">All Orders</a>
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

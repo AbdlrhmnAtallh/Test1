@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Order/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQWxsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Order/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Toy/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG95XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Toy/All.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG95XEFsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/Toy/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG95XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Work_Space/ASP.Net_Core/BrainBox/BrainBox/Views/_ViewImports.cshtml]

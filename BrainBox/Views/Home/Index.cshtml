@@ -1,8 +1,241 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBox</title>
+    <link rel="icon" href="eld.icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">BrainBox</a>
+
+        <nav class="navbar">
+            <a href="#Home" style="--i:1" class="active">Home</a>
+            <a asp-controller="Toy" asp-action="All" style="--i:2">Explore & Shop</a>
+            <a asp-controller="Toy" asp-action="Add" style="--i:3">Add Toys</a>
+            <a asp-controller="Order" asp-action="Add" style="--i:4">Make Order</a>
+            <a asp-controller="Order" asp-action="All" style="--i:4">All Orders</a>
+            <a href="#contact" style="--i:5">Contact us</a>
+        </nav>
+    </header>
+
+    <section class="homw">
+        <div class="home-content">
+            <div class="lightwhite">
+                <h3>Welcome to</h3>
+                <h1>BrainBox world</h1>
+                <h3>Here you can <span class="text"></span></h3>
+                <p>
+                    <br>This page is currently under maintenance<br> to make it even better for you. Please check back later.<br> Thanks for your patience! <br>
+                </p>
+                <div class="home-sci">
+                    <a href="https://www.facebook.com/profile.php?id=61558018618641&sk=about" target="_blank" style="--i:7">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank" style="--i:8">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/201064845771" target="_blank" style="--i:9">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCiTHVYJP09sZvf2TBVtidUQ" target="_blank" style="--i:10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-controller" viewBox="0 0 16 16">
+                            <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1z" />
+                            <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729q.211.136.373.297c.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466s.34 1.78.364 2.606c.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527s-2.496.723-3.224 1.527c-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.3 2.3 0 0 1 .433-.335l-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a14 14 0 0 0-.748 2.295 12.4 12.4 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.4 12.4 0 0 0-.339-2.406 14 14 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27s-2.063.091-2.913.27" />
+                        </svg>
+                    </a>
+                </div>
+                <a href="#Explore & Shop" class="btn-box">Shop now!</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class=" about-img">
+            <img src="image/222.jpg">
+        </div>
+        <div class="about-text">
+            <h2>What <span>is</span></h2>
+            <h4>BrainBox</h4>
+            <p>
+
+                At BrainBox, we have a vision of safeguarding our children's minds from the negative impact of platforms like TikTok and short videos, which have narrowed our children's attention span to less than a minute.<br> Our goal is to provide games that enhance focus and encourage patience in children.<br>
+
+                In today's fast-paced digital world, we understand the importance of nurturing our children's cognitive abilities.<br> With this in mind, we are dedicated to creating a positive and enriching environment where children can learn, grow, and thrive.<br>
+
+                Through engaging and educational games, we aim to foster concentration skills and cultivate patience in young minds. Our mission is to empower children to navigate the digital landscape responsibly while developing essential life skills that will serve them well into the future.<br>
+
+                Join us on this journey as we strive to make <br>a difference in the lives of children everywhere.<br> Together, let's build a brighter, more focused future for our little ones.
+            </p>
+
+
+            <a href="#" class="btn-box">More About Us</a>
+        </div>
+    </section>
+    <section>
+        <div class="services" id="services">
+            <div class="container">
+                <h1 class="sub-title">Our <span>Services</span></h1>
+                <div class="services-list">
+                    <div>
+                        <i class='bx bx-code-alt' style='color:#00eeff'></i>
+                        <h2>Delivery to All of Egypt</h2>
+                        <p>We deliver across Egypt, ensuring your packages reach any destination reliably and on time. Whether it's urban areas or remote locations, our nationwide network has you covered. Trust us for safe and efficient deliveries tailored to your needs, no matter where you are in Egypt.</p>
+                        <a href="#" class="read">lern more</a>
+                    </div>
+                    <div>
+                        <i class='bx bx-crop' style='color:#00eeff'></i>
+                        <h2>Online Payment Gateway</h2>
+                        <p>Simplify your payments  with our secure online gateway. Integrate seamlessly into your website or app, offering various payment options like cards, wallets, and bank transfers. Enjoy faster checkouts and increased customer satisfaction with our reliable solution.</p>
+                        <a href="#" class="read">lern more</a>
+                    </div>
+                    <div>
+                        <i class='bx bxl-apple' style='color:#00eeff'></i>
+                        <h2>Customer Communication Tools</h2>
+                        <p>Stay connected with your customers using our communication tools. Send updates, answer inquiries, and provide support through SMS, email, live chat, and social media. Keep your customers informed and engaged throughout their journey, enhancing their experience with your business.</p>
+                        <a href="#" class="read">lern more</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <h1 class="sub-title" id="h1"> My <span>Skills</span></h1> -->
+    <section class="three">
+
+        <div class="container1" id="Skills">
+            <h1 class="heading1">Service Excellence</h1>
+            <div class="Technical-bars">
+                <div class="bar">
+                    <i style="color:#c95d2e;" class='bx bxl-html5'></i>
+                    <div class="info">
+                        <span>Customer Satisfaction with Our Products</span>
+                    </div>
+                    <div class="progress">
+                        <span calss="HTML" style="width:0" data-width="95%"></span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <i style="color:#147bbc;" class='bx bxl-css3'></i>
+                    <div class="info">
+                        <span>Post-Sales Service</span>
+                    </div>
+                    <div class="progress">
+                        <span class="css" style="width:0" data-width="80%"></span>
+                    </div>
+                </div>
+                <div class="bar">
+                    <i style="color:#b0bc1e;" class='bx bxl-javascript'></i>
+                    <div class="info">
+                        <span>On-Time Delivery</span>
+                    </div>
+                    <div class="progress">
+                        <span class="javascript" style="width:0" data-width="60%"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        <div class="container2">
+            <h1 class="heading1">Professional Skills</h1>
+            <div class="radial-bars">
+
+                <div class="radial-bar">
+                    <svg x="0px" y="0px" viewBox="0 0 200 200">
+                        <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
+                        <circle class="path path-4" cx="100" cy="80" r="80"></circle>
+                    </svg>
+                    <div class="percentage">90%</div>
+                    <div class="text">Repeat purchase rate</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div id="portfolio" id="project">
+        <div class="main-text" id="project">
+            <h2>Shop <span>now</span></h2>
+            <div class="portfolio-content">
+                <div class="row">
+                    <img src="image/1.jpg">
+                    <div class="layer">
+                        <h5>Shape puzzle toy</h5>
+                        "To develop fine motor skills, hand-eye coordination, sensory, cognitive, and visual abilities, and problem-solving skills.
+                        <a href="#"><i class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="image/4.jpg">
+                    <div class="layer">
+                        <h5>The fishing game</h5>
+                        The fishing game includes 24 fish, 3 fishing rods, a fishing plate, and musical accompaniment (24 fish holes).
+                        <a href="#"><i class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="image/images.jpg">
+                    <div class="layer">
+                        <h5>"Innovative Toy Piano</h5>
+                        The Excellophone toy produces incredibly beautiful melodies when clicked upon. Each metal piece emits a unique tone.
+                        <a href="#"><i class="bx bx-link-external"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>contact <span>us</span></h2>
+            <h4>Let's work Together</h4>
+            <p></p>
+            <div class="contact-list">
+                <li><i class="bx bxs-send" id="send" style="color:#00eeff"></i>BrainBox@gmail.com</li>
+                <li><i class="bx bxs-phone" style="color:#00eeff"></i> 01064845771</li>
+            </div>
+            <div class="contact-icons">
+                <a href="https://www.facebook.com/profile.php?id=61558018618641" target="_blank">
+                    <i class="bx bxl-facebook-circle"></i>
+                </a>
+                <a href="https://wa.me/201064845771" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <!-- <a href="https://www.linkedin.com/in/ahmed-eldeeb-5395a9278/" target="_blank"> <i
+                        class="bx bxl-linkedin "></i></a> -->
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="">
+                <input type="" placeholder="Enter Your Name" required>
+                <input type="email" placeholder="Enter Your Email" required>
+                <input type="email" placeholder="Enter Your Subject">
+                <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                <input type="submit" value="submit" class="send">
+            </form>
+        </div>
+    </section>
+    <div class="last-text">
+        <p>Developed with love by BrainBox © 2024</p>
+    </div>
+    <a href="#" class="top"> <i class="bx bx-up-arrow-alt"></i></a>
+
+
+
+
+    <script src="js/app.js"></script>
+    <script src="/bootstrap-5.1.3-dist/js/all.min.js"></script>
+    <script src="/bootstrap-5.1.3-dist/js/all.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+﻿@model List<Order>
+
+<title>All Orders</title>
+
+<a asp-controller="Order" asp-action="Add" class="btn btn-info">Make Order</a>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Order Number</th>
+            <th>Total Price </th>
+            <th>Toys in order</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            string[] arr = { "table-success", "table-danger", "table-info", "table-warning", "table-active" };
+            int counter = -1;
+
+        }
+        @foreach(var item in Model)
+        {
+           
+            if (counter == 4) { counter = -1; }
+            counter++;
+            <tr class="@arr[counter]">
+                <td>@item.Id</td>
+                <td>@item.OrderNo</td>
+                <td>@item.TotalPrice</td>
+                <td>
+                    @foreach(var i in ViewBag.Toys)
+                    {
+                        <text>@i.Name</text><text>, </text>
+                    }
+                </td>
+                <td><a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a></td>
+                <td><a asp-action="Remove" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

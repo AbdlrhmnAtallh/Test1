@@ -1,22 +1,23 @@
 ﻿using BrainBox.Models;
+using BrainBox.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrainBox.Controllers
 {
     public class OrderController : Controller
     {
-        public static List<Order> Orders { get; set; }
-        public OrderController() 
+
+        IToyLayer itoylayer;
+        IOrderLayer iorderlayer;
+        public OrderController(IToyLayer _itoylayer, IOrderLayer _iorderlayer)
         {
-            List<int> ordersids = new List<int>();
-            ordersids.Add(001);
-            Orders.Add(new Order { Id = 001, OrderNo = 1, TotalPrice = 0, ToysIds = ordersids });
+            itoylayer = _itoylayer;
+            iorderlayer = _iorderlayer;
         }
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Toys = ToyController.Toys.ToList();
-            ViewBag.Orders = Orders.ToList();
+            ViewBag.Toys = itoylayer.All().ToList();
             return View();
         }
         [HttpPost]
@@ -24,50 +25,50 @@ namespace BrainBox.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                Orders.Add(order);
+                iorderlayer.Add(order);
                 return RedirectToAction("All");
             }
-            ViewBag.Toys = ToyController.Toys.ToList();
-            ViewBag.Orders = Orders.ToList();
+            ViewBag.Toys = itoylayer.All().ToList();
             return View(order);
         }
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewBag.Toys = ToyController.Toys.ToList();
-            ViewBag.Orders = Orders.ToList();
-            var item = Orders.FirstOrDefault(e => e.Id == id);
-            return View("Add", item);
+            ViewBag.Toys = itoylayer.All().ToList();
+            var item =  iorderlayer.All().FirstOrDefault(e => e.Id == id);
+            return View( item);
         }
         [HttpPost]
         public IActionResult Edit(Order order)
         {
-            var item = Orders.FirstOrDefault(e => e.Id == order.Id);
+            var item = iorderlayer.All().FirstOrDefault(e => e.Id == order.Id);
             if (item == null)
             {
                 throw new Exception("No toy match this id");
             }
             if (ModelState.IsValid)
             {
-                item.OrderNo = order.OrderNo;
-                item.TotalPrice = order.TotalPrice;
-                item.Id = order.Id;
+                iorderlayer.Edit(item);
                 return RedirectToAction("All");
             }
-            ViewBag.Toys = ToyController.Toys.ToList();
-            ViewBag.Orders = Orders.ToList();
-            return View("Add", order);
+            ViewBag.Toys = itoylayer.All().ToList();
+            return View(order);
+        }
+
+        public IActionResult All()
+        {
+            ViewBag.Toys = itoylayer.All().ToList();
+            return View(iorderlayer.All().ToList());
         }
 
         public IActionResult Remove(int id)
         {
-            var item = Orders.FirstOrDefault(e => e.Id == id);
+            var item = iorderlayer.All().FirstOrDefault(e => e.Id == id);
             if (item == null)
             {
                 throw new Exception("No toy Orders this id");
             }
-            Orders.Remove(item);
+            iorderlayer.Remove(item);
             return RedirectToAction("All");
         }
 
