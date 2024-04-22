@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBox</title>
     <link rel="icon" href="eld.icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="~/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/all.min.css">
@@ -19,11 +19,29 @@
 
         <nav class="navbar">
             <a href="#Home" style="--i:1" class="active">Home</a>
+            
             <a asp-controller="Toy" asp-action="All" style="--i:2">Explore & Shop</a>
-            <a asp-controller="Toy" asp-action="Add" style="--i:3">Add Toys</a>
-            <a asp-controller="Order" asp-action="Add" style="--i:4">Make Order</a>
-            <a asp-controller="Order" asp-action="All" style="--i:4">All Orders</a>
+            
             <a href="#contact" style="--i:5">Contact us</a>
+            @{
+                var isAuthenticated = User.Identity.IsAuthenticated;
+            }
+            @if (isAuthenticated)
+            {
+                <a asp-controller="Toy" asp-action="Add" style="--i:3">Add Toys</a>
+                <a asp-controller="Order" asp-action="All" style="--i:4">All Orders</a>
+                
+                <form method="post" asp-action="Logout" asp-controller="Account">
+                    <button type="submit" class="btn-box">Logout</button>
+                    
+                    <!-- partial -->
+                </form>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Register" style="--i:1" class="active">Sign up</a>
+                <a asp-controller="Account" asp-action="Login" class="active">Sign in</a>
+            }
         </nav>
     </header>
 
@@ -61,7 +79,7 @@
 
     <section class="about" id="about">
         <div class=" about-img">
-            <img src="image/222.jpg">
+            <img src="~/image/222.jpg">
         </div>
         <div class="about-text">
             <h2>What <span>is</span></h2>
@@ -167,7 +185,7 @@
             <h2>Shop <span>now</span></h2>
             <div class="portfolio-content">
                 <div class="row">
-                    <img src="image/1.jpg">
+                    <img src="~/image/1.jpg">
                     <div class="layer">
                         <h5>Shape puzzle toy</h5>
                         "To develop fine motor skills, hand-eye coordination, sensory, cognitive, and visual abilities, and problem-solving skills.
@@ -175,7 +193,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <img src="image/4.jpg">
+                    <img src="~/image/4.jpg">
                     <div class="layer">
                         <h5>The fishing game</h5>
                         The fishing game includes 24 fish, 3 fishing rods, a fishing plate, and musical accompaniment (24 fish holes).
@@ -183,7 +201,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <img src="image/images.jpg">
+                    <img src="~/image/images.jpg">
                     <div class="layer">
                         <h5>"Innovative Toy Piano</h5>
                         The Excellophone toy produces incredibly beautiful melodies when clicked upon. Each metal piece emits a unique tone.
@@ -232,9 +250,9 @@
 
 
 
-    <script src="js/app.js"></script>
-    <script src="/bootstrap-5.1.3-dist/js/all.min.js"></script>
-    <script src="/bootstrap-5.1.3-dist/js/all.min.js"></script>
+    <script src="~/js/app.js"></script>
+    <script src="~/bootstrap-5.1.3-dist/js/all.min.js"></script>
+    <script src="~/bootstrap-5.1.3-dist/js/all.min.js"></script>
 
 </body>
 

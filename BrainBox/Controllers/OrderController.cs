@@ -31,6 +31,19 @@ namespace BrainBox.Controllers
             ViewBag.Toys = itoylayer.All().ToList();
             return View(order);
         }
+
+        public IActionResult Buy(int id)
+        {
+            var toy = itoylayer.All().FirstOrDefault(i => i.Id == id);
+            Order order = new Order();
+            order.Id = toy.Id + 100;
+            order.OrderNo = toy.Id + 1;
+            order.ToysIds = new List<int>();
+            order.ToysIds.Add(toy.Id);
+
+            iorderlayer.Add(order);
+            return RedirectToAction("ViewInCards", "Toy");
+        }
         [HttpGet]
         public IActionResult Edit(int id)
         {

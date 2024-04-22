@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\css\\AddForm.css"
     },
     {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\css\\Cards.css",
+      "PackagePath": "staticwebassets\\css\\Cards.css"
+    },
+    {
       "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\css\\Table.css",
       "PackagePath": "staticwebassets\\css\\Table.css"
     },
@@ -139,6 +143,26 @@
     {
       "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\image\\images.jpg",
       "PackagePath": "staticwebassets\\image\\images.jpg"
+    },
+    {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\60fa9474-518e-4f5c-933d-731498404533.jpg",
+      "PackagePath": "staticwebassets\\images\\60fa9474-518e-4f5c-933d-731498404533.jpg"
+    },
+    {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\7ab7ce2f-425c-4fb2-9720-d61296233778.jpg",
+      "PackagePath": "staticwebassets\\images\\7ab7ce2f-425c-4fb2-9720-d61296233778.jpg"
+    },
+    {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\9088a929-a6d0-4fd8-b88d-7f12b9af9d88.jpg",
+      "PackagePath": "staticwebassets\\images\\9088a929-a6d0-4fd8-b88d-7f12b9af9d88.jpg"
+    },
+    {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\9fae6b05-5539-4e96-8f5d-84a81a2d54c5.jpeg",
+      "PackagePath": "staticwebassets\\images\\9fae6b05-5539-4e96-8f5d-84a81a2d54c5.jpeg"
+    },
+    {
+      "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\d66741b9-007e-4677-bafc-ed71228b39d3.jpeg",
+      "PackagePath": "staticwebassets\\images\\d66741b9-007e-4677-bafc-ed71228b39d3.jpeg"
     },
     {
       "Id": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\js\\app.js",

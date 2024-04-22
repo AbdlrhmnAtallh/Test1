@@ -27,6 +27,8 @@ namespace BrainBox.Models
         [EnumDataType(typeof(GenderType))]
         public string GenderFor { get; set; }
         public bool InStock { get; set; }
+        public string? ImageFileName { get; set; }
+        public IFormFile? Image { get; set; }
         public  List<int>? OrderId {get; set; }
 
 
