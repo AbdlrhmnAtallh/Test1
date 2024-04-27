@@ -29,3 +29,8 @@ F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\refint\BrainBox.dl
 F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\BrainBox.pdb
 F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\BrainBox.genruntimeconfig.cache
 F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\ref\BrainBox.dll
+F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.Views.dll
+F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\bin\Debug\net6.0\AspNetCoreHero.ToastNotification.dll
+F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\BrainBox.MvcApplicationPartsAssemblyInfo.cs
+F:\Work_Space\ASP.Net_Core\BrainBox\BrainBox\obj\Debug\net6.0\BrainBox.csproj.CopyComplete

@@ -1,16 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrainBox.Models
 {
-    public class Order
+	[Table("Order", Schema = "dbo")]
+	public class Order
     {
         [Key]
         [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
-        public int OrderNo { get; set; }
-        public List<int> ToysIds { get; set; }
-        [Required]
+        public string? OrderName { get; set; }
+        public string? ClientName { get; set; }
+        
         public decimal TotalPrice { get; set; }
     }
 }

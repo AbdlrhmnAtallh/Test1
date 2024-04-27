@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BrainBox.Services;
 using Microsoft.AspNetCore.Authorization;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace BrainBox.Controllers
 {
@@ -9,10 +10,13 @@ namespace BrainBox.Controllers
     {
         IToyLayer itoylayer;
         IOrderLayer iorderlayer;
-        public ToyController(IToyLayer _itoylayer,IOrderLayer _iorderlayer)
+        // Notifications ##
+        public INotyfService _notifyService { get; }
+        public ToyController(IToyLayer _itoylayer,IOrderLayer _iorderlayer, INotyfService notifyService)
         {
             itoylayer = _itoylayer;
             iorderlayer = _iorderlayer;
+            _notifyService = notifyService;
         }
 
         [Authorize(Policy = "Admin")]
@@ -20,6 +24,7 @@ namespace BrainBox.Controllers
         public IActionResult Add()
         {
             ViewBag.Orders = iorderlayer.All().ToList();
+           
             return View();
         }
         [HttpPost]
@@ -48,11 +53,12 @@ namespace BrainBox.Controllers
                     }
                     toy.ImageFileName = fileName;
                 }
-
+                _notifyService.Information("Toy Added ");
                 itoylayer.Add(toy);
                 
                 return RedirectToAction("All");
             }
+            _notifyService.Error("Can't Add this toy please enter a valid informations");
             ViewBag.Orders = iorderlayer.All().ToList();
             return View(toy);
         }
@@ -74,6 +80,7 @@ namespace BrainBox.Controllers
             if (ModelState.IsValid)
             {
                 itoylayer.Edit(toy);
+                ViewData["ToyUpdated"] = "info";
                 return RedirectToAction("All");
             }
             ViewBag.Orders = iorderlayer.All().ToList();
@@ -83,6 +90,7 @@ namespace BrainBox.Controllers
         public IActionResult All()
         {
             ViewBag.Orders = iorderlayer.All().ToList();
+            TempData["OrderAdded"] = "sccess";
             return View(itoylayer.All().ToList());
         }
         [Authorize(Policy = "Admin")]
@@ -94,12 +102,16 @@ namespace BrainBox.Controllers
                 throw new Exception("No toy match this id");
             }
             itoylayer.remove(item);
+            _notifyService.Warning("Toy deleted");
             return RedirectToAction("All");
         }
 
         public IActionResult ViewInCards()
         {
+            var userName = User.Identity.Name;
+            ViewBag.UserName = userName;
             ViewBag.Cards = true;
+            
             return View("All", itoylayer.All().ToList());
         }
 

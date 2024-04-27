@@ -1,10 +1,6 @@
 ﻿@model Toy
 
-@{
-    SelectList items = new SelectList(ViewBag.Orders, "Id", "OrderNo");
-
-}
-
+<partial name="_Notifications" />
 <head>
     <title>Edit Toy</title>
     <link rel="stylesheet" href="~/css/AddForm.css">
@@ -41,9 +37,7 @@
             <option>All</option>
         </select>
 
-        <label asp-for="OrderId" class="form-label"></label>
-        <select asp-items="items" asp-for="OrderId" class="form-control"></select>
-        <span asp-validation-for="OrderId" style="color:red"></span>
+        
     </div>
 <button type="submit" class="btn btn-primary">Edit</button>
 </form>

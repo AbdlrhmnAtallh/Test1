@@ -1,9 +1,10 @@
 ﻿@model Toy
 
 @{
-    SelectList items = new SelectList(ViewBag.Orders, "Id", "OrderNo");
+    //SelectList items = new SelectList(ViewBag.Orders, "Id", "OrderNo");
 
 }
+
 
 <head>
     <title>Add Toy</title>
@@ -14,9 +15,7 @@
 
     <div asp-validation-summary="All" style="color:red"></div>
     <div>
-        @{
-
-        }
+       
     <label asp-for="Id" class="form-label"></label>
     <input asp-for="Id" class="form-control" />
     <span asp-validation-for="Id" style="color:red"></span>
@@ -44,9 +43,7 @@
         <option>All</option>
     </select>
 
-    <label asp-for="OrderId" class="form-label"></label>
-    <select asp-items="items" asp-for="OrderId"  class="form-control"></select>
-    <span asp-validation-for="OrderId" style="color:red"></span>
+   
 
         <label asp-for="Image" class="form-label"></label>
         <input type="file" name="image" class="form-control" />

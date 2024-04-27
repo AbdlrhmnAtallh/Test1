@@ -17,6 +17,11 @@ namespace BrainBox.Controllers
 
         public IActionResult Index()
         {
+            var role = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+            var userName = User.Identity.Name; // Get the username
+            ViewBag.IsAdmin = role == "Admin";
+            ViewBag.IsClient = role == "Client";
+            ViewBag.UserName = userName; // Pass the username to the view
             return View();
         }
 

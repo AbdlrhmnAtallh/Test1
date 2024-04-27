@@ -1,5 +1,7 @@
-﻿using BrainBox.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using BrainBox.Models;
 using BrainBox.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrainBox.Controllers
@@ -9,68 +11,32 @@ namespace BrainBox.Controllers
 
         IToyLayer itoylayer;
         IOrderLayer iorderlayer;
-        public OrderController(IToyLayer _itoylayer, IOrderLayer _iorderlayer)
+        // Notifications ##
+        public INotyfService _notifyService { get; }
+        public OrderController(IToyLayer _itoylayer, IOrderLayer _iorderlayer, INotyfService notifyService)
         {
             itoylayer = _itoylayer;
             iorderlayer = _iorderlayer;
+            _notifyService = notifyService;
         }
-        [HttpGet]
-        public IActionResult Add()
-        {
-            ViewBag.Toys = itoylayer.All().ToList();
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Add(Order order)
-        {
-            if (ModelState.IsValid)
-            {
-                iorderlayer.Add(order);
-                return RedirectToAction("All");
-            }
-            ViewBag.Toys = itoylayer.All().ToList();
-            return View(order);
-        }
-
-        public IActionResult Buy(int id)
+       
+        [Authorize]
+        public IActionResult Buy(int id,string name)
         {
             var toy = itoylayer.All().FirstOrDefault(i => i.Id == id);
             Order order = new Order();
-            order.Id = toy.Id + 100;
-            order.OrderNo = toy.Id + 1;
-            order.ToysIds = new List<int>();
-            order.ToysIds.Add(toy.Id);
-
+            order.TotalPrice = toy.Price;
+            order.OrderName = "1 of " + toy.Name;
+            order.ClientName = name;
             iorderlayer.Add(order);
+            TempData["OrderAdded"] = "sccess";
+            _notifyService.Success("Order Added To your Shopping Cart");
             return RedirectToAction("ViewInCards", "Toy");
         }
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            ViewBag.Toys = itoylayer.All().ToList();
-            var item =  iorderlayer.All().FirstOrDefault(e => e.Id == id);
-            return View( item);
-        }
-        [HttpPost]
-        public IActionResult Edit(Order order)
-        {
-            var item = iorderlayer.All().FirstOrDefault(e => e.Id == order.Id);
-            if (item == null)
-            {
-                throw new Exception("No toy match this id");
-            }
-            if (ModelState.IsValid)
-            {
-                iorderlayer.Edit(item);
-                return RedirectToAction("All");
-            }
-            ViewBag.Toys = itoylayer.All().ToList();
-            return View(order);
-        }
-
+       
         public IActionResult All()
         {
-            ViewBag.Toys = itoylayer.All().ToList();
+            
             return View(iorderlayer.All().ToList());
         }
 
@@ -81,7 +47,9 @@ namespace BrainBox.Controllers
             {
                 throw new Exception("No toy Orders this id");
             }
+            ViewData["OrderDeleted"] = "error";
             iorderlayer.Remove(item);
+            _notifyService.Warning("Order deleted ");
             return RedirectToAction("All");
         }
 

@@ -1,6 +1,7 @@
 ﻿@model Toy
 
 <head>
+	
 	<link rel="stylesheet" href="~/css/Cards.css">
 </head>
 <div id="container">
@@ -29,9 +30,11 @@
 
 		<!-- 		Control -->
 		<div class="control">
-
+			@{
+				string username = ViewBag.UserName;
+			}
 			<!-- Start Button buying -->
-			<a asp-controller="Order" asp-action="Buy" asp-route-id="@Model.Id" class="btn">
+			<a asp-controller="Order" asp-action="Buy" asp-route-id="@Model.Id" asp-route-name="@username" class="btn">
 				<!-- 		the Price -->
 				<span class="price">@Model.Price $</span>
 				<!-- 		shopping cart icon-->

@@ -1,19 +1,22 @@
 ﻿using BrainBox.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BrainBox.Models
 {
-
-    public enum GenderType
+	
+	public enum GenderType
     {
         Boys,
         Girls,
         All
     }
-    public class Toy
+	[Table("Toy", Schema = "dbo")]
+	public class Toy
     {
         [Required(ErrorMessage ="Id is Required")]
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required(ErrorMessage ="Name is Required")]
         [StringLength(50, ErrorMessage = "The Name Field Must Be a Maximum of 50 Characters")]
@@ -28,8 +31,8 @@ namespace BrainBox.Models
         public string GenderFor { get; set; }
         public bool InStock { get; set; }
         public string? ImageFileName { get; set; }
+        [NotMapped]
         public IFormFile? Image { get; set; }
-        public  List<int>? OrderId {get; set; }
 
 
     }

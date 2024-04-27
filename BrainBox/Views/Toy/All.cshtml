@@ -3,12 +3,10 @@
 <title>All Toyes</title>
 
 
-
 @{
     if (ViewBag.Cards==true)
     {
         
-        <a asp-action="All" class="btn btn-primary">Table View</a>
         foreach(var item in Model)
         {
             <partial name="_ProductsInCards" model="item" />
@@ -16,6 +14,7 @@
     }
     else
     {
+        <h3>Admins only can see this view </h3>
         <a asp-controller="Toy" asp-action="Add" class="btn btn-secondary">Add Toy</a>
         <a asp-action="ViewInCards" class="btn btn-primary">Cards View</a>
         <table class="table table-bordered">
@@ -27,7 +26,7 @@
                     <th>Price</th>
                     <th>Gender For </th>
                     <th>Available</th>
-                    <th>Orders</th>
+                   
                 </tr>
             </thead>
             <tbody>
@@ -58,15 +57,6 @@
                             }
                         }
 
-
-                        <td>
-                            @foreach (var i in ViewBag.Orders)
-                            {
-                                <text> @i.OrderNo</text>
-
-                                <text>, </text>
-                            }
-                        </td>
                         <td><a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a></td>
                         <td><a asp-action="Remove" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
                     </tr>
@@ -75,3 +65,6 @@
         </table>
     }
 }
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

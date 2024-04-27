@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "usKEK/QgSqCsrdZwaj7X6+TnBIJohjp7musnU7vMW51oFvMDsOR+rQEmNl8s797Bq1dbXfSzLjU8WHgiLx3aFA==",
+  "dgSpecHash": "WEm9N+ywqz/XmGrrbR6LGOHgQ+BLa1ZZkvMythH1JZqRCGeDy1/04eroeIUmZuU0Xz47cxyQulrES+93QNu+RQ==",
   "success": true,
   "projectFilePath": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\BrainBox.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\abd elrahman\\.nuget\\packages\\aspnetcorehero.toastnotification\\1.1.0\\aspnetcorehero.toastnotification.1.1.0.nupkg.sha512",
+    "C:\\Users\\abd elrahman\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
