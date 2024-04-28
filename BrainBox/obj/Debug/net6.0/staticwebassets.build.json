@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SLkBbvEi53Je+ez8/NnyC7KGH3/2Ixo2OP6oD+TFi3E=",
+  "Hash": "kfEhW06Ee3Wui2/lbExZ8IAQMot14StKR4V3HEmBKDc=",
   "Source": "BrainBox",
   "BasePath": "_content/BrainBox",
   "Mode": "Default",
@@ -833,6 +833,23 @@
       "OriginalItemSpec": "wwwroot\\images\\7ab7ce2f-425c-4fb2-9720-d61296233778.jpg"
     },
     {
+      "Identity": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\8ad8b8b9-9cf8-472d-a0fb-712f3644ab13.jpeg",
+      "SourceId": "BrainBox",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\",
+      "BasePath": "_content/BrainBox",
+      "RelativePath": "images/8ad8b8b9-9cf8-472d-a0fb-712f3644ab13.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\8ad8b8b9-9cf8-472d-a0fb-712f3644ab13.jpeg"
+    },
+    {
       "Identity": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\8e1e243c-0e82-49d3-9d0d-baaf9a47222e.jpeg",
       "SourceId": "BrainBox",
       "SourceType": "Discovered",
@@ -882,6 +899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\935ce2fa-aba5-4a47-8754-f15ad1086cc8.jpeg"
+    },
+    {
+      "Identity": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\947ebfb9-bfcb-4929-b853-60e3ab03ad7e.jpeg",
+      "SourceId": "BrainBox",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\",
+      "BasePath": "_content/BrainBox",
+      "RelativePath": "images/947ebfb9-bfcb-4929-b853-60e3ab03ad7e.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\947ebfb9-bfcb-4929-b853-60e3ab03ad7e.jpeg"
     },
     {
       "Identity": "F:\\Work_Space\\ASP.Net_Core\\BrainBox\\BrainBox\\wwwroot\\images\\9fae6b05-5539-4e96-8f5d-84a81a2d54c5.jpeg",

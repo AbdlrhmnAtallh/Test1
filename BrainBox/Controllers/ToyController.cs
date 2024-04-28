@@ -32,6 +32,7 @@ namespace BrainBox.Controllers
         {
             var item = itoylayer.All().FirstOrDefault(e => e.Id == toy.Id);
             if (item != null) { ModelState.AddModelError("", "This Id is exists, try another id"); }
+            ModelState.Remove("Id");
             if (ModelState.IsValid)
             {
                 // Save the image file

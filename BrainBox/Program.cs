@@ -1,8 +1,10 @@
 using AspNetCoreHero.ToastNotification;
+using BrainBox.Models;
 using BrainBox.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
@@ -18,13 +20,21 @@ namespace BrainBox
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddSingleton<IToyLayer, ToyLayer>();
-            builder.Services.AddSingleton<IOrderLayer, OrderLayer>();
+            builder.Services.AddScoped<IToyLayer, ToyLayer>();
+            builder.Services.AddScoped<IOrderLayer, OrderLayer>();
+            
             //Notifications ##
             builder.Services.AddNotyf(config => { config.DurationInSeconds = 10;
                 config.IsDismissable = true;
                 config.Position = NotyfPosition.BottomRight; });
             // End Notifications Configrations 
+
+            // Connect With Database ##
+            builder.Services.AddDbContext<BrainBoxDbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-4EKG6BP\SQL2022;
+                    Initial Catalog=BrainBoxApplication;
+                    Integrated Security=SSPI;
+                    TrustServerCertificate=True;"));
+            // End Conection string ##
 
             // Authentication
             builder.Services.AddAuthentication("CookieAuth")

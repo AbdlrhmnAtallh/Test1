@@ -7,7 +7,7 @@ namespace BrainBox.Models
 	public class Order
     {
         [Key]
-        [Required]
+        
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? OrderName { get; set; }

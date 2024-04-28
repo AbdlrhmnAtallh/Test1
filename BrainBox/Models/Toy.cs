@@ -14,7 +14,7 @@ namespace BrainBox.Models
 	[Table("Toy", Schema = "dbo")]
 	public class Toy
     {
-        [Required(ErrorMessage ="Id is Required")]
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
