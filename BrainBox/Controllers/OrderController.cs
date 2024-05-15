@@ -13,11 +13,13 @@ namespace BrainBox.Controllers
         IOrderLayer iorderlayer;
         // Notifications ##
         public INotyfService _notifyService { get; }
+        public static List<Order> Cart = new List<Order>();
         public OrderController(IToyLayer _itoylayer, IOrderLayer _iorderlayer, INotyfService notifyService)
         {
             itoylayer = _itoylayer;
             iorderlayer = _iorderlayer;
             _notifyService = notifyService;
+            
         }
        
         [Authorize]
@@ -31,12 +33,19 @@ namespace BrainBox.Controllers
             iorderlayer.Add(order);
             TempData["OrderAdded"] = "sccess";
             _notifyService.Success("Order Added To your Shopping Cart");
+            Cart.Add(order);
             return RedirectToAction("ViewInCards", "Toy");
         }
        
         public IActionResult All()
         {
-            
+            var role = User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value;
+            var userName = User.Identity.Name; // Get the username
+            ViewBag.IsAdmin = role == "Admin";
+            ViewBag.IsClient = role == "Client";
+            ViewBag.UserName = userName;
+
+            ViewBag.Cart = Cart.ToList();
             return View(iorderlayer.All().ToList());
         }
 
@@ -50,6 +59,9 @@ namespace BrainBox.Controllers
             ViewData["OrderDeleted"] = "error";
             iorderlayer.Remove(item);
             _notifyService.Warning("Order deleted ");
+            ViewBag.itemDeleted = item.TotalPrice;
+            Cart.Remove(item);
+            iorderlayer.Remove(item);
             return RedirectToAction("All");
         }
 
